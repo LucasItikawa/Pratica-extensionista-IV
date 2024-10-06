@@ -11,7 +11,7 @@ Este projeto é um sistema de reservas de salas de reunião, permitindo que os u
 - **Backend**: Node.js (API RESTful)
 - **Frontend**: React (web) e React Native (mobile)
 - **Banco de Dados**: PostgreSQL
-- **Infraestrutura Cloud**: AWS
+- **Infraestrutura Cloud**: Heroku
 
 ## Como clonar o projeto
 ```bash
