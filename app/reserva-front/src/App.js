@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Button } from "antd";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ padding: "20px" }}>
+      <h1>Bem-vindo ao Ant Design!</h1>
+      <Button type="primary">Clique Aqui</Button>
     </div>
   );
-}
+};
 
 export default App;
