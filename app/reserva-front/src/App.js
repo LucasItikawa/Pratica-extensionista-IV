@@ -1,13 +1,17 @@
 import React from "react";
-import { Button } from "antd";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { routes } from "./views";
 
 const App = () => {
-  return (
-    <div style={{ padding: "20px" }}>
-      <h1>Bem-vindo ao Ant Design!</h1>
-      <Button type="primary">Clique Aqui</Button>
-    </div>
-  );
+	return (
+		<Router>
+			<Routes>
+				{routes.map(({ path, Component }) => (
+					<Route key={path} path={path} element={<Component />} />
+				))}
+			</Routes>
+		</Router>
+	);
 };
 
 export default App;
