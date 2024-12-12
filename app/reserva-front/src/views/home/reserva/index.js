@@ -1,34 +1,10 @@
 import React from "react";
-import {
-	Form,
-	Input,
-	Button,
-	Select,
-	DatePicker,
-	Alert,
-	Row,
-	Col,
-	Card,
-} from "antd";
+import { Form, Button, Select, DatePicker, Row } from "antd";
 
 import { localEnum } from "../../../enum/local-enum";
-import reservaService from "../../../service/reserva-service";
 
 const RangePicker = DatePicker.RangePicker;
 const Reserva = () => {
-	const [form] = Form.useForm();
-
-	const onFinish = async (values) => {
-		console.log(values);
-		try {
-			const responser = await reservaService.create(values);
-			console.log("Reserva criada com sucesso:", responser);
-			Alert.success("Reserva criada com sucesso!");
-		} catch (error) {
-			console.error("Erro ao criar a reserva:", error);
-		}
-	};
-
 	const locaisOptions = localEnum.map((local) => ({
 		value: local.id,
 		label: local.local,

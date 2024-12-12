@@ -4,6 +4,7 @@ import Reserva from "./reserva";
 import dayjs from "dayjs";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import ListaReserva from "./lista-reserva";
+import reservaService from "../../service/reserva-service";
 
 const Home = () => {
 	const [form] = Form.useForm();
@@ -17,6 +18,9 @@ const Home = () => {
 				dayjs(values.horario[1]).format("YYYY-MM-DDTHH:mm:ss") || "";
 
 			delete values.horario;
+			const responser = await reservaService.create(values);
+			console.log("Reserva criada com sucesso:", responser);
+			Alert.success("Reserva criada com sucesso!");
 			setSteps(0);
 		} catch (error) {
 			console.error("Erro ao criar a reserva:", error);
