@@ -1,11 +1,12 @@
 import axios from "axios";
 
-const API_URL = "https://api.exemplo.com/v1/rest/reserva";
+const API_URL = "http://localhost:3000/reservas";
 
 const reservaService = {
 	getAll: async () => {
 		try {
 			const response = await axios.get(API_URL);
+			console.log("Reservas:", response.data);
 			return response.data;
 		} catch (error) {
 			console.error("Erro ao buscar todas as reservas:", error);
